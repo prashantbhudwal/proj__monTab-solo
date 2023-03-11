@@ -1,7 +1,5 @@
-export default async function useUnsplash() {
-  const response = await fetch(
-    "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=japan"
-  );
+export default async function useUnsplash(url: string) {
+  const response = await fetch(url);
   const responseJson = await response.json();
   const imageUrl = responseJson.urls.full;
   const authorName = responseJson.user.name;
