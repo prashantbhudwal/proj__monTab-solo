@@ -1,9 +1,9 @@
 import useUnsplash from "./hooks/useUnsplash";
 
 export default async function Home() {
-  const [url, author] = await useUnsplash(
-    "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=black"
-  );
+  const unsplashUrl =
+    "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=black";
+  const [url, author] = await useUnsplash(unsplashUrl);
 
   return (
     <main
