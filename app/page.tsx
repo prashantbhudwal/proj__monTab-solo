@@ -1,13 +1,14 @@
-"use client";
-import useUnsplash from "./useUnsplash";
-
-export default function Home() {
-  const { data, error, isLoading } = useUnsplash();
+export default async function Home() {
+  const response = await fetch(
+    "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=japan"
+  );
+  const responseJson = await response.json();
+  const imageUrl = responseJson.urls.full;
 
   return (
-    <main>
-      <h1 className="text-3xl text-red-700">Hello world!</h1>
-      {JSON.stringify(data)}
-    </main>
+    <main
+      className="h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    ></main>
   );
 }

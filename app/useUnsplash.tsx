@@ -8,12 +8,10 @@ export default function useUnsplash() {
   const fetcher = async function () {
     const response = await fetch(url);
     const responseJson = await response.json();
-    return responseJson;
+    return responseJson.urls;
   };
 
   const { data, error, isLoading } = useSWR(url, fetcher);
-
-  console.log(data);
 
   return {
     data,
