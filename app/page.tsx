@@ -1,6 +1,7 @@
 import usePokemon from "./hooks/usePokemon";
 import useUnsplash from "./hooks/useUnsplash";
 import Image from "next/image";
+import SearchBar from "./SearchBar";
 
 export default async function Home() {
   const test =
@@ -19,7 +20,7 @@ export default async function Home() {
         <p>Weather</p>
       </div>
 
-      <h1 className="text-center text-8xl drop-shadow-2xl">TIME HERE</h1>
+      <SearchBar />
 
       <div className="flex flex-row justify-between items-baseline">
         <h1 className="text-xl text-slate-600 drop-shadow-md">{author}</h1>

@@ -2,7 +2,7 @@ export default async function usePokemon() {
   let randomNumber = Math.floor(Math.random() * 900) + 1;
 
   try {
-    const url = `https://pokeapi.co/api/2/pokemon/${randomNumber}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw Error("Something went wrong");
