@@ -25,9 +25,12 @@ export default async function Home() {
 
         <div className="flex flex-row justify-between items-baseline">
           <h1 className="text-xl text-slate-600 drop-shadow-md">Mon Stuff</h1>
+          {/* TODO: Rename this */}
           <PokemonWrapper name={pokemonName}>
             <Image
               className=""
+              placeholder="blur"
+              blurDataURL="/shiba.jpg"
               src={pokemonUrl}
               alt="pokemon image"
               width={200}
