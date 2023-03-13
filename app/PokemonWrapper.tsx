@@ -1,11 +1,19 @@
 "use client";
 
+import { ReactElement, ReactNode } from "react";
+
 const handleClick = (name: string) => {
   if (name) {
     window.location.href = `https://bulbapedia.bulbagarden.net/wiki/${name}`;
   }
 };
-export default function PokemonWrapper({ children, name }: any) {
+export default function PokemonWrapper({
+  children,
+  name,
+}: {
+  children: ReactNode;
+  name: string;
+}) {
   return (
     <div
       onClick={() => handleClick(name)}
