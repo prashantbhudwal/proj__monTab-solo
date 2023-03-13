@@ -2,13 +2,14 @@ import usePokemon from "./hooks/usePokemon";
 import useUnsplash from "./hooks/useUnsplash";
 import Image from "next/image";
 import SearchBar from "./SearchBar";
+import PokemonWrapper from "./PokemonWrapper";
 
 export default async function Home() {
   const test =
     "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=japan";
   const [unsplashUrl, author] = await useUnsplash(test);
 
-  const [pokemonUrl] = await usePokemon();
+  const [pokemonUrl, pokemonName] = await usePokemon();
 
   return (
     <main
@@ -24,7 +25,7 @@ export default async function Home() {
 
       <div className="flex flex-row justify-between items-baseline">
         <h1 className="text-xl text-slate-600 drop-shadow-md">Mon Stuff</h1>
-        <div className="shadow-inner shadow-neutral-300 backdrop-filter backdrop-blur-sm backdrop-opacity-50 p-4 rounded-full flex items-center justify-center">
+        <PokemonWrapper name={pokemonName}>
           <Image
             className=""
             src={pokemonUrl}
@@ -32,7 +33,8 @@ export default async function Home() {
             width={200}
             height={200}
           ></Image>
-        </div>
+          <p className="capitalize text-fuchsia-500 text-xl">{pokemonName}</p>
+        </PokemonWrapper>
       </div>
     </main>
   );

@@ -8,12 +8,14 @@ export default async function usePokemon() {
       throw Error(`The request failed with status ${response.status} `);
     }
     const json = await response.json();
+    const name = json.name;
     const imageUrl = json.sprites.other.home.front_default;
-    return [imageUrl];
+    return [imageUrl, name];
   } catch (error) {
     console.log(error);
     return [
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/39.png",
+      "Mon-Mon",
     ];
   }
 }
