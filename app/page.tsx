@@ -16,14 +16,14 @@ export default async function Home() {
       style={{ backgroundImage: `url(${unsplashUrl})` }}
     >
       <div className="flex flex-row justify-between">
-        <p>Crypto</p>
-        <p>Weather</p>
+        <p>Mon Stuff</p>
+        <p>Mon Stuff</p>
       </div>
 
       <SearchBar />
 
       <div className="flex flex-row justify-between items-baseline">
-        <h1 className="text-xl text-slate-600 drop-shadow-md">{author}</h1>
+        <h1 className="text-xl text-slate-600 drop-shadow-md">Mon Stuff</h1>
         <div className="shadow-inner shadow-neutral-300 backdrop-filter backdrop-blur-sm backdrop-opacity-50 p-4 rounded-full flex items-center justify-center">
           <Image
             className=""
