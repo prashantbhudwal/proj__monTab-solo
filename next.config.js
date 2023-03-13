@@ -11,6 +11,12 @@ const nextConfig = {
         port: "",
         pathname: "/PokeAPI/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
