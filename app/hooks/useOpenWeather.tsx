@@ -4,15 +4,20 @@ export default function useOpenWeather(lat: number | null, lon: number | null) {
 
   const fetcher = function (url: string) {
     return fetch(url)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch data from OpenWeather API");
+        }
+        return res.json();
+      })
       .then((data) => data.main);
   };
-
   const { data: weather } = useSWR(() => (lat ? url : null), fetcher, {
     refreshInterval: 600000, // set refresh interval to 10 minutes
   });
-
-  if (weather) {
-    return [weather.temp, weather.feels_like, weather.humidity];
-  } else return [null, null, null];
+  return [
+    weather?.temp || null,
+    weather?.feels_like || null,
+    weather?.humidity || null,
+  ];
 }
