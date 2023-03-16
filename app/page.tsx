@@ -20,7 +20,7 @@ export default async function Home() {
       <div className="flex flex-col justify-between h-screen px-4 py-6">
         <div className="flex flex-row justify-between">
           <Weather />
-          <Clock className="text-fuchsia-500 shadow-inner backdrop-filter backdrop-blur-sm backdrop-opacity-50 shadow-fuchsia-500 rounded-lg p-4 text-4xl font-semibold drop-shadow-lg " />
+          <Clock />
         </div>
         <SearchBar />
 

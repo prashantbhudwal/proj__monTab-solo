@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Card from "./Card";
 
-export default function Clock({ className }: { className: string }) {
+export default function Clock() {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -13,8 +14,20 @@ export default function Clock({ className }: { className: string }) {
   }, []);
 
   return (
-    <p className={className}>
-      {date.toLocaleTimeString("en-US", { timeStyle: "short" })}
-    </p>
+    <Card>
+      <p className="text-3xl font-bold">
+        {date.toLocaleTimeString("en-US", { timeStyle: "short" })}
+      </p>
+      <p className="text-fuchsia-200 mt-2">
+        {date.toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}
+      </p>
+      <p className="text-fuchsia-200 text-sm mt-2">
+        {date.toLocaleDateString("en-US", { weekday: "long" })}
+      </p>
+    </Card>
   );
 }
