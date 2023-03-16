@@ -4,11 +4,11 @@ import { useState } from "react";
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: any) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
       handleSearch();
     }
@@ -31,13 +31,6 @@ function SearchBar() {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
       />
-      {/* <button
-        type="button"
-        className="block px-3 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600"
-        onClick={handleSearch}
-      >
-        Search
-      </button> */}
     </div>
   );
 }
