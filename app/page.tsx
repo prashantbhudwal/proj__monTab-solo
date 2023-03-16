@@ -20,12 +20,14 @@ export default async function Home() {
       <div className="flex flex-col justify-between h-screen px-4 py-6">
         <div className="flex flex-row justify-between">
           <Weather />
-          <Clock className="text-fuchsia-100 shadow-inner backdrop-filter backdrop-blur-sm backdrop-opacity-50 shadow-fuchsia-500 rounded-lg p-4 text-4xl font-semibold drop-shadow-lg " />
+          <Clock className="text-fuchsia-500 shadow-inner backdrop-filter backdrop-blur-sm backdrop-opacity-50 shadow-fuchsia-500 rounded-lg p-4 text-4xl font-semibold drop-shadow-lg " />
         </div>
         <SearchBar />
 
         <div className="flex flex-row justify-between items-baseline">
-          <h1 className="text-xl text-slate-600 drop-shadow-md">Mon Stuff</h1>
+          <h1 className="text-sm text-slate-600 drop-shadow-md">
+            Image by {author}
+          </h1>
           {/* TODO: Rename this */}
           <PokemonWrapper name={pokemonName}>
             <Image
