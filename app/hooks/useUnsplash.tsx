@@ -1,6 +1,6 @@
 export default async function useUnsplash(url: string) {
   try {
-    const response = await fetch(url, { cache: "no-store" });
+    const response = await fetch(url, { next: { revalidate: 21600 } });
     const responseJson = await response.json();
     const imageUrl = responseJson.urls.full;
     const authorName = responseJson.user.name;
