@@ -13,8 +13,8 @@ export default function Weather({ className }: { className?: string }) {
   return (
     <div className={className}>
       <p>Temp:{temp}</p>
-      <p>Real Feel:{temp}</p>
-      <p>Humidity:{temp}</p>
+      <p>Real Feel:{realFeel}</p>
+      <p>Humidity:{humidity}</p>
     </div>
   );
 }
