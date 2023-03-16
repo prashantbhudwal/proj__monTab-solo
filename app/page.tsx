@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import PokemonWrapper from "./PokemonWrapper";
 import FullScreenBg from "./FullScreenBg";
 import Clock from "./Clock";
+import Weather from "./Weather";
 
 export default async function Home() {
   const test =
@@ -18,10 +19,9 @@ export default async function Home() {
       <FullScreenBg url={unsplashUrl} />
       <div className="flex flex-col justify-between h-screen px-4 py-6">
         <div className="flex flex-row justify-between">
-          <p>Mon Stuff</p>
+          <Weather />
           <Clock className="text-fuchsia-100 shadow-inner backdrop-filter backdrop-blur-sm backdrop-opacity-50 shadow-fuchsia-500 rounded-lg p-4 text-4xl font-semibold drop-shadow-lg " />
         </div>
-
         <SearchBar />
 
         <div className="flex flex-row justify-between items-baseline">
@@ -30,8 +30,6 @@ export default async function Home() {
           <PokemonWrapper name={pokemonName}>
             <Image
               className=""
-              placeholder="blur"
-              blurDataURL="/shiba.jpg"
               src={pokemonUrl}
               alt="pokemon image"
               width={200}
