@@ -1,9 +1,9 @@
 export default async function usePokemon() {
-  let randomNumber = Math.floor(Math.random() * 900) + 1;
-
   try {
-    const url = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
-    const response = await fetch(url);
+    let getRandomNumber = () => Math.floor(Math.random() * 900) + 1;
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${getRandomNumber()}`
+    );
     if (!response.ok) {
       throw Error(`The request failed with status ${response.status} `);
     }
