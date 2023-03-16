@@ -16,10 +16,10 @@ export default async function Home() {
   return (
     <main className=" text-slate-100">
       <FullScreenBg url={unsplashUrl} />
-      <div className="flex flex-col justify-between h-screen p-4">
+      <div className="flex flex-col justify-between h-screen px-4 py-6">
         <div className="flex flex-row justify-between">
           <p>Mon Stuff</p>
-          <Clock className="text-amber-600" />
+          <Clock className="text-fuchsia-100 shadow-inner backdrop-filter backdrop-blur-sm backdrop-opacity-50 shadow-fuchsia-500 rounded-lg p-4 text-4xl font-semibold drop-shadow-lg " />
         </div>
 
         <SearchBar />
